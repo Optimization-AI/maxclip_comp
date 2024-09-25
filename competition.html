@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaxCLIP Competition</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body class="antialiased leading-normal tracking-normal text-gray-300">
+    <!-- background blobs -->
+    <div class="blob"></div>
+    <div class="blob"></div>
+    <div class="blob"></div>
+
+    <nav class="navbar animate__animated animate__fadeInDown">
+        <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+            <a class="brand-text text-2xl font-bold text-white-custom flex items-center" href="index.html">
+                <img src="images/logo_transparent.png" alt="" class="h-10 mr-2"> MaxCLIP
+            </a>        
+            <div class="hidden lg:flex space-x-4">
+                <a class="navbar-link" href="index.html">Home</a>
+                <a class="navbar-link" href="competition.html">Competition</a>
+                <a class="navbar-link" href="leaderboard.html">Leaderboard</a>
+                <a class="navbar-link" href="participate.html">Participate</a>
+                <a class="navbar-link" href="about.html">About</a>
+                <a class="navbar-link" href="contact.html">Contact</a>
+            </div>
+            <button class="lg:hidden" id="navbarToggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+        <div id="mobileMenu" class="lg:hidden flex flex-col mt-4 space-y-2">
+            <a class="mobile-menu-item" href="index.html">Home</a>
+            <a class="mobile-menu-item" href="competition.html">Competition</a>
+            <a class="mobile-menu-item" href="leaderboard.html">Leaderboard</a>
+            <a class="mobile-menu-item" href="participate.html">Participate</a>
+            <a class="mobile-menu-item" href="about.html">About</a>
+            <a class="mobile-menu-item" href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-6 animate__animated animate__fadeInUp">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h1 class="text-3xl font-bold mb-4 text-center text-black">MaxCLIP Competition</h1>
+            <p class="text-lg mb-6 text-center text-black">Welcome to the MaxCLIP competition page! Here you can find all the details about our latest competition, including rules and deadlines.</p>
+    
+            <!-- motivation -->
+            <section id="motivation" class="mb-6">
+                <h2 class="text-2xl font-semibold mb-2 text-black">Motivation</h2>
+                <p class="mb-4 text-black">Training state-of-the-art CLIP models requires large amount of resources, especially a large number of GPUs due to its large batch-size requirement. However, such a large amount of resources is not accessible to most researchers. In order to accelerate research in this area, we host this competition in search for resource-efficient algorithms that train good CLIP models.</p>
+            </section>
+    
+            <!-- task definition -->
+            <section id="task-definition" class="mb-6">
+                <h2 class="text-2xl font-semibold mb-2 text-black">Task Definition</h2>
+                <p class="mb-4 text-black">In this competition, participants will design an algorithm to efficiently train CLIP models \cite{pmlr-v139-radford21a} in a limited-resource setting. The designed algorithm needs to be implemented and will be run on training datasets of different sizes on a small number of GPUs (e.g., 8GPUs). The algorithms will then be ranked according to the evaluation performance of the trained models. In order to reduce the cost of participation, the participants only need to design and implement their algorithms, and we will provide resources to run their algorithms.</p>
+            </section>
+    
+            <!-- training setting -->
+            <section id="training-setting" class="mb-6">
+                <h2 class="text-2xl font-semibold mb-2 text-black">Training Setting</h2>
+                <p class="mb-4 text-black">Each submission will be run in three different settings, which differ in the size of the training data. Based on the training data size, we name the three settings as small (1 million training data), medium (10 million) and large (100 million). Dataset of smaller scale is a subset of that of larger scales, which are all subsets of the DFN-2B dataset \cite{fang2024data}. Other components of training, including number of samples seen, batch size, etc., will be fixed across different settings. We provide more detail of different training settings in the table below.</p>
+    
+                <table class="min-w-full bg-white mb-4 border text-black">
+                    <thead>
+                        <tr>
+                            <th class="py-2 px-4 border-b">Scale</th>
+                            <th class="py-2 px-4 border-b">Dataset Size</th>
+                            <th class="py-2 px-4 border-b">Samples Seen</th>
+                            <th class="py-2 px-4 border-b">Model</th>
+                            <th class="py-2 px-4 border-b">Batch Size/GPU</th>
+                            <th class="py-2 px-4 border-b">GPUs</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="py-2 px-4 border-b">Small</td>
+                            <td class="py-2 px-4 border-b">1 million</td>
+                            <td class="py-2 px-4 border-b" rowspan="3">1 billion</td>
+                            <td class="py-2 px-4 border-b" rowspan="3">ViT-B/32</td>
+                            <td class="py-2 px-4 border-b" rowspan="3">4096</td>
+                            <td class="py-2 px-4 border-b" rowspan="3">8x H100</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">Medium</td>
+                            <td class="py-2 px-4 border-b">10 million</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">Large</td>
+                            <td class="py-2 px-4 border-b">100 million</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+    
+            <!-- evaluation -->
+            <section id="evaluation" class="mb-6">
+                <h2 class="text-2xl font-semibold mb-2 text-black">Evaluation Metric</h2>
+                <p class="mb-4 text-black">The performance of the trained models will be evaluated using the <a href="https://github.com/mlfoundations/datacomp" class="text-blue-500 hover:underline">DataComp</a> benchmark. We also keep track of ImageNet-1K Top 1 zero-shot accuracy. We will evaluate submissions as soon as we can and release leaderboard updates on a weekly basis.</p>
+            </section>
+    
+            <!-- baseline and resources -->
+            <section id="baseline-resources" class="mb-6">
+                <h2 class="text-2xl font-semibold mb-2 text-black">Baseline, Code, and Resources</h2>
+                <p class="mb-4 text-black">A starter kit with example training code will be provided, which implements the FastCLIP-v3 algorithm. Baseline results of FastCLIP-v3 on all the settings are provided as a reference. We will provide all the GPU resources to train and evaluate each submission. We will release all the training data so that participants are able to tune the hyperparameters of their algorithms.</p>
+            </section>
+    
+            <!-- leaderboards -->
+            <section id="leaderboards" class="mb-6">
+                <h2 class="text-2xl font-semibold mb-2 text-black">Leaderboards</h2>
+                <p class="mb-4 text-black">For all submissions, we will run them under different settings and evaluate the trained models. The submissions are then ranked according the average performance under different settings and the results will be published in a public leaderboard.
+
+                    We also setup an additional (unconstrained) leaderboard to keep track of state-of-the-art CLIP model performance in different settings. This leaderboard publishes the performance of CLIP models trained using any approach on any dataset. These should be from a paper (preprint or postprint). Participants need to follow the same evaluation process on the Datacomp benchmark or submit a CLIP model  which will be evaluated through the same process. The results will be categorized according to model architecture and ranked.</p>
+            </section>
+    
+            <!-- rules -->
+            <section id="submission-rules" class="mb-6">
+                <h2 class="text-2xl font-semibold mb-2 text-black">Submission Rules</h2>
+                <ol class="list-decimal pl-5 mb-4 text-black">
+                    <li>Eligibility: The competition is open to individuals and teams from all backgrounds, including university students, researchers, and industry professionals.</li>
+                    <li>Each team is limited to one submission every two weeks.</li>
+                    <li>Submissions must include:
+                        <ul class="list-disc pl-5">
+                            <li>The modified code in the provided editable folder.</li>
+                            <li>A configuration file with hyperparameters.</li>
+                        </ul>
+                    </li>
+                    <li>Submissions must be a single ZIP file.</li>
+                    <li>Submissions must not include any modifications to frozen components (e.g., dataset, model architecture, etc.) unless explicitly permitted.</li>
+                    <li>In case of a technical failure (e.g., bug), the competitor will be notified and allowed to submit a fix within 48 hours.</li>
+                    <li>We welcome submission of papers/GitHub repositories from newly-released.</li>
+                </ol>
+            </section>
+            
+            <section id="permitted-modifications" class="mb-6">
+                <h2 class="text-2xl font-semibold mb-2 text-black">Permitted Modifications</h2>
+                <p class="text-black">In the constrained track, the following modifications to the codebase are permitted:</p>
+                <ol class="list-decimal pl-5 mb-4 text-black">
+                    <li>Loss computation.</li>
+                    <li>Model update.</li>
+                </ol>
+            </section>
+            
+            <section id="prohibited-actions" class="mb-6">
+                <h2 class="text-2xl font-semibold mb-2 text-black">Prohibited Actions</h2>
+                <ul class="list-disc pl-5 mb-4 text-black">
+                    <li>Participants may not use any pre-trained models in their submission.</li>
+                    <li>Tampering with model architecture or any other fixed code (for a constrained submission).</li>
+                    <li>Tampering with or bypassing the competition's fixed evaluation or training procedure is strictly prohibited and will result in automatic disqualification.</li>
+                </ul>
+                <p class="text-black">A folder with code that competitors are allowed to edit will be provided; everything else (except a configuration file containing hyperparameters) is frozen.</p>
+            </section>            
+    
+            <!-- frequently asked questions -->
+            <section>
+                <h2 class="text-2xl font-semibold mb-2 text-black">Frequently Asked Questions</h2>
+                <p class="mb-4 text-black">Here are some common questions and answers about the competition:</p>
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="text-xl font-medium text-black cursor-pointer" onclick="toggleAnswer('answer1')">What is the competition about?</h3>
+                        <p id="answer1" class="text-black hidden">The competition aims to explore and optimize the performance of CLIP models in varying data scale environments.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-medium text-black cursor-pointer" onclick="toggleAnswer('answer2')">How can I submit my work?</h3>
+                        <p id="answer2" class="text-black hidden">Submissions must be a single ZIP file, including the modified code and a configuration file with hyperparameters.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-medium text-black cursor-pointer" onclick="toggleAnswer('answer3')">What datasets will be used?</h3>
+                        <p id="answer3" class="text-black hidden">The competition will use small (1M), medium (10M), and large (100M) datasets from the DFN-2B collection.</p>
+                    </div>
+                </div>
+            </section>
+    
+            <script>
+                function toggleAnswer(id) {
+                    const answer = document.getElementById(id);
+                    answer.classList.toggle('hidden');
+                }
+            </script>
+    
+        </div>
+    </div>    
+
+    <footer class="footer py-4 text-center animate__animated animate__fadeInUp animate__delay-1s">
+        <div class="container mx-auto">
+            <p>MaxCLIP - Inspiring Innovation in CLIP Optimization | &copy; 2024</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navbarToggle = document.getElementById('navbarToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            navbarToggle.addEventListener('click', function () {
+                mobileMenu.classList.toggle('show');
+            });
+        });
+    </script>    
+    
+</body>
+</html>
