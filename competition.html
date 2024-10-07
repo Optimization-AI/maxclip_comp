@@ -59,41 +59,41 @@
             <!-- task definition -->
             <section id="task-definition" class="mb-6">
                 <h2 class="text-2xl font-semibold mb-2 text-black">Task Definition</h2>
-                <p class="mb-4 text-black">In this competition, participants will design an algorithm to efficiently train CLIP models \cite{pmlr-v139-radford21a} in a limited-resource setting. The designed algorithm needs to be implemented and will be run on training datasets of different sizes on a small number of GPUs (e.g., 8GPUs). The algorithms will then be ranked according to the evaluation performance of the trained models. In order to reduce the cost of participation, the participants only need to design and implement their algorithms, and we will provide resources to run their algorithms.</p>
+                <p class="mb-4 text-black">In this competition, participants will design an algorithm to efficiently train <a href="https://arxiv.org/abs/2103.00020" class="text-blue-600 underline hover:text-blue-800">CLIP models</a> in a limited-resource setting. The designed algorithm needs to be implemented and will be run on training datasets of different sizes on a small number of GPUs (e.g., 8GPUs). The algorithms will then be ranked according to the evaluation performance of the trained models. In order to reduce the cost of participation, the participants only need to design and implement their algorithms, and we will provide resources to run their algorithms.</p>
             </section>
     
             <!-- training setting -->
             <section id="training-setting" class="mb-6">
                 <h2 class="text-2xl font-semibold mb-2 text-black">Training Setting</h2>
-                <p class="mb-4 text-black">Each submission will be run in three different settings, which differ in the size of the training data. Based on the training data size, we name the three settings as small (1 million training data), medium (10 million) and large (100 million). Dataset of smaller scale is a subset of that of larger scales, which are all subsets of the DFN-2B dataset \cite{fang2024data}. Other components of training, including number of samples seen, batch size, etc., will be fixed across different settings. We provide more detail of different training settings in the table below.</p>
+                <p class="mb-4 text-black">Each submission will be run in three different settings, which differ in the size of the training data. Based on the training data size, we name the three settings as small (1 million training data), medium (10 million) and large (100 million). Dataset of smaller scale is a subset of that of larger scales, which are all subsets of the <a href="https://arxiv.org/abs/2309.17425" class="text-blue-600 underline hover:text-blue-800">DFN-2B dataset</a>. Other components of training, including number of samples seen, batch size, etc., will be fixed across different settings. We provide more detail of different training settings in the table below.</p>
     
-                <table class="min-w-full bg-white mb-4 border text-black">
-                    <thead>
+                <table class="min-w-full bg-white mb-4 border text-black text-center border-collapse">
+                    <thead class="border-b-2 border-gray-500">
                         <tr>
-                            <th class="py-2 px-4 border-b">Scale</th>
-                            <th class="py-2 px-4 border-b">Dataset Size</th>
-                            <th class="py-2 px-4 border-b">Samples Seen</th>
-                            <th class="py-2 px-4 border-b">Model</th>
-                            <th class="py-2 px-4 border-b">Batch Size/GPU</th>
-                            <th class="py-2 px-4 border-b">GPUs</th>
+                            <th class="py-2 px-4 border border-gray-500">Scale</th>
+                            <th class="py-2 px-4 border border-gray-500">Dataset Size</th>
+                            <th class="py-2 px-4 border border-gray-500">Samples Seen</th>
+                            <th class="py-2 px-4 border border-gray-500">Model</th>
+                            <th class="py-2 px-4 border border-gray-500">Batch Size/GPU</th>
+                            <th class="py-2 px-4 border border-gray-500">GPUs</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="divide-y divide-gray-500">
                         <tr>
-                            <td class="py-2 px-4 border-b">Small</td>
-                            <td class="py-2 px-4 border-b">1 million</td>
-                            <td class="py-2 px-4 border-b" rowspan="3">1 billion</td>
-                            <td class="py-2 px-4 border-b" rowspan="3">ViT-B/32</td>
-                            <td class="py-2 px-4 border-b" rowspan="3">4096</td>
-                            <td class="py-2 px-4 border-b" rowspan="3">8x H100</td>
+                            <td class="py-2 px-4 border border-gray-500">Small</td>
+                            <td class="py-2 px-4 border border-gray-500">1 million</td>
+                            <td class="py-2 px-4 border border-gray-500" rowspan="3">1 billion</td>
+                            <td class="py-2 px-4 border border-gray-500" rowspan="3">ViT-B/32</td>
+                            <td class="py-2 px-4 border border-gray-500" rowspan="3">4096</td>
+                            <td class="py-2 px-4 border border-gray-500" rowspan="3">8x H100</td>
                         </tr>
                         <tr>
-                            <td class="py-2 px-4 border-b">Medium</td>
-                            <td class="py-2 px-4 border-b">10 million</td>
+                            <td class="py-2 px-4 border border-gray-500">Medium</td>
+                            <td class="py-2 px-4 border border-gray-500">10 million</td>
                         </tr>
                         <tr>
-                            <td class="py-2 px-4 border-b">Large</td>
-                            <td class="py-2 px-4 border-b">100 million</td>
+                            <td class="py-2 px-4 border border-gray-500">Large</td>
+                            <td class="py-2 px-4 border border-gray-500">100 million</td>
                         </tr>
                     </tbody>
                 </table>
@@ -102,7 +102,7 @@
             <!-- evaluation -->
             <section id="evaluation" class="mb-6">
                 <h2 class="text-2xl font-semibold mb-2 text-black">Evaluation Metric</h2>
-                <p class="mb-4 text-black">The performance of the trained models will be evaluated using the <a href="https://github.com/mlfoundations/datacomp" class="text-blue-500 hover:underline">DataComp</a> benchmark. We also keep track of ImageNet-1K Top 1 zero-shot accuracy. We will evaluate submissions as soon as we can and release leaderboard updates on a weekly basis.</p>
+                <p class="mb-4 text-black">The performance of the trained models will be evaluated using the <a href="https://github.com/mlfoundations/datacomp" class="text-blue-600 underline hover:text-blue-800">DataComp</a> benchmark. We also keep track of ImageNet-1K Top 1 zero-shot accuracy. We will evaluate submissions as soon as we can and release leaderboard updates on a weekly basis.</p>
             </section>
     
             <!-- baseline and resources -->
