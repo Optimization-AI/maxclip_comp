@@ -156,50 +156,605 @@
                     <thead>
                         <tr>
                             <th>Name</th>
+                            <th>Model</th>
+                            <th>Dataset</th>
+                            <th>Batch Size (k)</th>
+                            <th>Samples Seen (B)</th>
+                            <th>ImageNet-1K Top 1</th>
                             <th>DataComp Average</th>
-                            <th>ImageNet Zero-Shot Accuracy</th>
-                            <th>Organization</th>
-                            <th>Submission Date</th>
-                            <th>Writeup</th>
-                            <th>Training Dataset</th>
-                            <th>Model Size</th>
-                            <th>Model Architecture</th>
+                            <th>Weights</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- pretend data for unconstrained leaderboard -->
                         <tr>
-                            <td>UltraCLIP</td>
-                            <td>97.2</td>
-                            <td>89.4%</td>
-                            <td>OpenAI Lab</td>
-                            <td>2024-09-01</td>
-                            <td>-</td>
-                            <td>LAION-5B</td>
-                            <td>10B</td>
-                            <td>Transformer</td>
+                            <th><a href="https://openreview.net/pdf?id=ZKtZ7KQ6G5">DFN</a></th>
+                            <td>ViT-H/14</td>
+                            <td>DFN-5B</td>
+                            <td>78</td>
+                            <td>44</td>
+                            <td>84.35</td>
+                            <td>70.79</td>
+                            <td><a href="https://huggingface.co/apple/DFN5B-CLIP-ViT-H-14-378">Huggingface</a> </td>
                         </tr>
                         <tr>
-                            <td>DeepCLIP</td>
-                            <td>93.1</td>
-                            <td>86.5%</td>
-                            <td>DeepMind</td>
-                            <td>2024-08-30</td>
-                            <td>-</td>
-                            <td>LAION-400M</td>
-                            <td>6B</td>
-                            <td>Vision Transformer</td>
+                            <th><a href="https://openreview.net/pdf?id=ZKtZ7KQ6G5">DFN</a></th>
+                            <td>ViT-H/14</td>
+                            <td>DFN-5B</td>
+                            <td>78</td>
+                            <td>39</td>
+                            <td>83.43</td>
+                            <td>69.62</td>
+                            <td><a href="https://huggingface.co/immich-app/ViT-H-14-quickgelu__dfn5b">Huggingface</a> </td>
                         </tr>
                         <tr>
-                            <td>FastCLIP</td>
-                            <td>95.4</td>
-                            <td>87.6%</td>
-                            <td>Texas A&M OptMAI Lab</td>
-                            <td>2024-08-25</td>
-                            <td><a href="https://arxiv.org/abs/2407.01445" class="text-blue-500 hover:underline">FastCLIP</a></td>
+                            <th><a href="https://openaccess.thecvf.com/content/ICCV2023/html/Zhai_Sigmoid_Loss_for_Language_Image_Pre-Training_ICCV_2023_paper.html">SigLIP</a></th>
+                            <td>ViT-SO400M/14</td>
+                            <td>WebLI</td>
+                            <td>32</td>
+                            <td>45</td>
+                            <td>83.09</td>
+                            <td>69.21</td>
+                            <td><a href="https://huggingface.co/timm/ViT-SO400M-14-SigLIP-384">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/996e2b446391fcb8bf32a3d1645cc799-Abstract-Conference.html">CLIPA</a></th>
+                            <td>ViT-bigG/14</td>
+                            <td>Datacomp-1B</td>
+                            <td>64</td>
+                            <td>13.4</td>
+                            <td>83.07</td>
+                            <td>68.44</td>
+                            <td><a href="https://huggingface.co/UCSC-VLAA/ViT-bigG-14-CLIPA-336-datacomp1B">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/CVPR2024/html/Chen_ViTamin_Designing_Scalable_Vision_Models_in_the_Vision-Language_Era_CVPR_2024_paper.html">ViTamin</a></th>
+                            <td>ViTamin-XL</td>
+                            <td>Datacomp-1B</td>
+                            <td>90</td>
+                            <td>41</td>
+                            <td>82.67</td>
+                            <td>68.12</td>
+                            <td><a href="https://huggingface.co/jienengchen/ViTamin-XL-336px">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/996e2b446391fcb8bf32a3d1645cc799-Abstract-Conference.html">CLIPA</a></th>
+                            <td>ViT-bigG/14</td>
+                            <td>Datacomp-1B</td>
+                            <td>64</td>
+                            <td>13.3</td>
+                            <td>82.67</td>
+                            <td>68.26</td>
+                            <td><a href="https://huggingface.co/UCSC-VLAA/ViT-bigG-14-CLIPA-datacomp1B">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/CVPR2024/html/Chen_ViTamin_Designing_Scalable_Vision_Models_in_the_Vision-Language_Era_CVPR_2024_paper.html">ViTamin</a></th>
+                            <td>ViTamin-XL</td>
+                            <td>Datacomp-1B</td>
+                            <td>90</td>
+                            <td>40</td>
+                            <td>82.25</td>
+                            <td>67.66</td>
+                            <td><a href="https://huggingface.co/jienengchen/ViTamin-XL-256px">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/ICCV2023/html/Zhai_Sigmoid_Loss_for_Language_Image_Pre-Training_ICCV_2023_paper.html">SigLIP</a></th>
+                            <td>ViT-L/16</td>
+                            <td>WebLI</td>
+                            <td>32</td>
+                            <td>45</td>
+                            <td>82.10</td>
+                            <td>66.83</td>
+                            <td><a href="https://huggingface.co/timm/ViT-L-16-SigLIP-384">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/CVPR2024/html/Chen_ViTamin_Designing_Scalable_Vision_Models_in_the_Vision-Language_Era_CVPR_2024_paper.html">ViTamin</a></th>
+                            <td>ViTamin-L2</td>
+                            <td>Datacomp-1B</td>
+                            <td>90</td>
+                            <td>13.3</td>
+                            <td>82.05</td>
+                            <td>67.97</td>
+                            <td><a href="https://huggingface.co/jienengchen/ViTamin-L2-384px">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/ICCV2023/html/Zhai_Sigmoid_Loss_for_Language_Image_Pre-Training_ICCV_2023_paper.html">SigLIP</a></th>
+                            <td>ViT-SO400M/14</td>
+                            <td>WebLI</td>
+                            <td>32</td>
+                            <td>40</td>
+                            <td>82.04</td>
+                            <td>68.07</td>
+                            <td><a href="https://huggingface.co/timm/ViT-SO400M-14-SigLIP">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://arxiv.org/abs/2303.15389">EVA-CLIP</a></th>
+                            <td>ViT-E/14</td>
                             <td>LAION-2B</td>
-                            <td>3B</td>
-                            <td>ConvNet</td>
+                            <td>144</td>
+                            <td>9</td>
+                            <td>81.97</td>
+                            <td>69.30</td>
+                            <td><a href="https://huggingface.co/timm/eva02_enormous_patch14_plus_clip_224.laion2b_s9b_b144k">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://arxiv.org/abs/2303.15389">EVA-CLIP</a></th>
+                            <td>ViT-E/14</td>
+                            <td>LAION-2B</td>
+                            <td>115</td>
+                            <td>4</td>
+                            <td>81.96</td>
+                            <td>66.66</td>
+                            <td><a href="https://huggingface.co/timm/eva02_enormous_patch14_clip_224.laion2b_s4b_b115k">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/CVPR2024/html/Chen_ViTamin_Designing_Scalable_Vision_Models_in_the_Vision-Language_Era_CVPR_2024_paper.html">ViTamin</a></th>
+                            <td>ViTamin-L</td>
+                            <td>Datacomp-1B</td>
+                            <td>90</td>
+                            <td>13</td>
+                            <td>81.83</td>
+                            <td>67.12</td>
+                            <td><a href="https://huggingface.co/jienengchen/ViTamin-L-384px">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/996e2b446391fcb8bf32a3d1645cc799-Abstract-Conference.html">CLIPA</a></th>
+                            <td>ViT-H/14</td>
+                            <td>Datacomp-1B</td>
+                            <td>64</td>
+                            <td>13.4</td>
+                            <td>81.81</td>
+                            <td>66.77</td>
+                            <td><a href="https://huggingface.co/UCSC-VLAA/ViT-H-14-CLIPA-336-datacomp1B">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/CVPR2024/html/Chen_ViTamin_Designing_Scalable_Vision_Models_in_the_Vision-Language_Era_CVPR_2024_paper.html">ViTamin</a></th>
+                            <td>ViTamin-L2</td>
+                            <td>Datacomp-1B</td>
+                            <td>90</td>
+                            <td>13.3</td>
+                            <td>81.80</td>
+                            <td>67.72</td>
+                            <td><a href="https://huggingface.co/jienengchen/ViTamin-L2-336px">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/CVPR2024/html/Chen_ViTamin_Designing_Scalable_Vision_Models_in_the_Vision-Language_Era_CVPR_2024_paper.html">ViTamin</a></th>
+                            <td>ViTamin-L</td>
+                            <td>Datacomp-1B</td>
+                            <td>90</td>
+                            <td>13</td>
+                            <td>81.60</td>
+                            <td>66.88</td>
+                            <td><a href="https://huggingface.co/jienengchen/ViTamin-L-336px">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/996e2b446391fcb8bf32a3d1645cc799-Abstract-Conference.html">CLIPA</a></th>
+                            <td>ViT-H/14</td>
+                            <td>Datacomp-1B</td>
+                            <td>64</td>
+                            <td>13.3</td>
+                            <td>81.50</td>
+                            <td>66.53</td>
+                            <td><a href="https://huggingface.co/UCSC-VLAA/ViT-H-14-CLIPA-datacomp1B">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/CVPR2024/html/Chen_ViTamin_Designing_Scalable_Vision_Models_in_the_Vision-Language_Era_CVPR_2024_paper.html">ViTamin</a></th>
+                            <td>ViTamin-L2</td>
+                            <td>Datacomp-1B</td>
+                            <td>90</td>
+                            <td>13.3</td>
+                            <td>81.43</td>
+                            <td>67.20</td>
+                            <td><a href="https://huggingface.co/jienengchen/ViTamin-L2-256px">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openreview.net/pdf?id=ZKtZ7KQ6G5">DFN</a></th>
+                            <td>ViT-L/14</td>
+                            <td>DFN-2B</td>
+                            <td>88</td>
+                            <td>12.8</td>
+                            <td>81.41</td>
+                            <td>66.65</td>
+                            <td><a href="https://huggingface.co/apple/DFN2B-CLIP-ViT-L-14">Huggingface</a></td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/CVPR2024/html/Chen_ViTamin_Designing_Scalable_Vision_Models_in_the_Vision-Language_Era_CVPR_2024_paper.html">ViTamin</a></th>
+                            <td>ViTamin-L</td>
+                            <td>Datacomp-1B</td>
+                            <td>90</td>
+                            <td>13</td>
+                            <td>81.19</td>
+                            <td>66.91</td>
+                            <td><a href="https://huggingface.co/jienengchen/ViTamin-L-256px">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/CVPR2024/html/Chen_ViTamin_Designing_Scalable_Vision_Models_in_the_Vision-Language_Era_CVPR_2024_paper.html">ViTamin</a></th>
+                            <td>ViTamin-L2</td>
+                            <td>Datacomp-1B</td>
+                            <td>90</td>
+                            <td>12.8</td>
+                            <td>80.89</td>
+                            <td>67.39</td>
+                            <td><a href="https://huggingface.co/jienengchen/ViTamin-L2-224px">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/CVPR2024/html/Chen_ViTamin_Designing_Scalable_Vision_Models_in_the_Vision-Language_Era_CVPR_2024_paper.html">ViTamin</a></th>
+                            <td>ViTamin-L</td>
+                            <td>Datacomp-1B</td>
+                            <td>90</td>
+                            <td>12.8</td>
+                            <td>80.77</td>
+                            <td>66.59</td>
+                            <td><a href="https://huggingface.co/jienengchen/ViTamin-L-224px">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openreview.net/forum?id=5BCFlnfE1g">MetaCLIP</a></th>
+                            <td>ViT-H/14</td>
+                            <td>MetaCLIP-2.5B</td>
+                            <td>32</td>
+                            <td>12.8</td>
+                            <td>80.53</td>
+                            <td>66.72</td>
+                            <td><a href="https://dl.fbaipublicfiles.com/MMPT/metaclip/h14_fullcc2.5b.pt">Meta</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/ICCV2023/html/Zhai_Sigmoid_Loss_for_Language_Image_Pre-Training_ICCV_2023_paper.html">SigLIP</a></th>
+                            <td>ViT-L/16</td>
+                            <td>WebLI</td>
+                            <td>32</td>
+                            <td>40</td>
+                            <td>80.43</td>
+                            <td>65.56</td>
+                            <td><a href="https://huggingface.co/timm/ViT-L-16-SigLIP-256">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://arxiv.org/abs/2303.15389">EVA-CLIP</a></th>
+                            <td>ViT-L/14</td>
+                            <td>Merged-2B (1.6B from LAION-2B, 0.4B from COYO-700M)</td>
+                            <td>61</td>
+                            <td>6</td>
+                            <td>80.37</td>
+                            <td>65.61</td>
+                            <td><a href="https://huggingface.co/timm/eva02_large_patch14_clip_336.merged2b_s6b_b61k">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://arxiv.org/abs/2306.15658">CLIPA-v2</a></th>
+                            <td>ViT-L/14</td>
+                            <td>Datacomp-1B</td>
+                            <td>64</td>
+                            <td>13.4</td>
+                            <td>80.27</td>
+                            <td>65.69</td>
+                            <td><a href="https://huggingface.co/UCSC-VLAA/ViT-L-14-CLIPA-336-datacomp1B">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/CVPR2023/html/Cherti_Reproducible_Scaling_Laws_for_Contrastive_Language-Image_Learning_CVPR_2023_paper">OpenCLIP</a></th>
+                            <td>ViT-bigG/14</td>
+                            <td>LAION-2B</td>
+                            <td>160</td>
+                            <td>36</td>
+                            <td>80.08</td>
+                            <td>66.65</td>
+                            <td><a href="https://huggingface.co/laion/CLIP-ViT-bigG-14-laion2B-39B-b160k">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://arxiv.org/abs/2303.15389">EVA-CLIP</a></th>
+                            <td>ViT-L/14</td>
+                            <td>Merged-2B (1.6B from LAION-2B, 0.4B from COYO-700M)</td>
+                            <td>131</td>
+                            <td>4</td>
+                            <td>79.78</td>
+                            <td>64.76</td>
+                            <td><a href="https://huggingface.co/timm/eva02_large_patch14_clip_224.merged2b_s4b_b131k">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://arxiv.org/abs/2306.15658">CLIPA-v2</a></th>
+                            <td>ViT-L/14</td>
+                            <td>Datacomp-1B</td>
+                            <td>64</td>
+                            <td>13.3</td>
+                            <td>79.60</td>
+                            <td>65.35</td>
+                            <td><a href="https://huggingface.co/UCSC-VLAA/ViT-L-14-CLIPA-336-datacomp1B">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/CVPR2023/html/Cherti_Reproducible_Scaling_Laws_for_Contrastive_Language-Image_Learning_CVPR_2023_paper">OpenCLIP</a></th>
+                            <td>ConvNeXt-XXL</td>
+                            <td>LAION-2B</td>
+                            <td>82</td>
+                            <td>34</td>
+                            <td>79.46</td>
+                            <td>65.11</td>
+                            <td><a href="https://huggingface.co/laion/CLIP-convnext_xxlarge-laion2B-s34B-b82K-augreg">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://arxiv.org/abs/2303.15389">EVA-CLIP</a></th>
+                            <td>ViT-g/14</td>
+                            <td>Merged-2B (1.6B from LAION-2B, 0.4B from COYO-700M)</td>
+                            <td>114</td>
+                            <td>11</td>
+                            <td>79.32</td>
+                            <td>66.05</td>
+                            <td><a href="https://huggingface.co/timm/eva_giant_patch14_plus_clip_224.merged2b_s11b_b114k">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/CVPR2023/html/Cherti_Reproducible_Scaling_Laws_for_Contrastive_Language-Image_Learning_CVPR_2023_paper">OpenCLIP</a></th>
+                            <td>ConvNeXt-XXL</td>
+                            <td>LAION-2B</td>
+                            <td>82</td>
+                            <td>34</td>
+                            <td>79.32</td>
+                            <td>64.96</td>
+                            <td><a href="https://huggingface.co/laion/CLIP-convnext_xxlarge-laion2B-s34B-b82K-augreg">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openreview.net/forum?id=dVaWCDMBof">DataComp</a></th>
+                            <td>ViT-L/14</td>
+                            <td>CommonPool</td>
+                            <td>90</td>
+                            <td>13</td>
+                            <td>79.21</td>
+                            <td>66.28</td>
+                            <td><a href="https://huggingface.co/laion/CLIP-ViT-L-14-DataComp.XL-s13B-b90K">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openreview.net/forum?id=5BCFlnfE1g">MetaCLIP</a></th>
+                            <td>ViT-L/14</td>
+                            <td>MetaCLIP-2.5B</td>
+                            <td>32</td>
+                            <td>12.8</td>
+                            <td>79.17</td>
+                            <td>65.92</td>
+                            <td><a href="https://dl.fbaipublicfiles.com/MMPT/metaclip/l14_fullcc2.5b.pt">Meta</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/ICCV2023/html/Zhai_Sigmoid_Loss_for_Language_Image_Pre-Training_ICCV_2023_paper.html">SigLIP</a></th>
+                            <td>ViT-B/16</td>
+                            <td>WebLI</td>
+                            <td>32</td>
+                            <td>45</td>
+                            <td>79.13</td>
+                            <td>64.59</td>
+                            <td><a href="https://huggingface.co/timm/ViT-B-16-SigLIP-512">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/996e2b446391fcb8bf32a3d1645cc799-Abstract-Conference.html">CLIPA</a></th>
+                            <td>ViT-H/14</td>
+                            <td>LAION-2B</td>
+                            <td>64</td>
+                            <td>13.4</td>
+                            <td>79.10</td>
+                            <td>64.39</td>
+                            <td><a href="https://huggingface.co/UCSC-VLAA/ViT-H-14-CLIPA-336-laion2B">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/CVPR2023/html/Cherti_Reproducible_Scaling_Laws_for_Contrastive_Language-Image_Learning_CVPR_2023_paper">OpenCLIP</a></th>
+                            <td>ConvNeXt-XXL</td>
+                            <td>LAION-2B</td>
+                            <td>82</td>
+                            <td>34</td>
+                            <td>79.07</td>
+                            <td>64.93</td>
+                            <td><a href="https://huggingface.co/laion/CLIP-convnext_xxlarge-laion2B-s34B-b82K-augreg">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://arxiv.org/abs/2303.15389">EVA-CLIP</a></th>
+                            <td>ViT-g/14</td>
+                            <td>LAION-400M</td>
+                            <td>41</td>
+                            <td>11</td>
+                            <td>78.52</td>
+                            <td>63.39</td>
+                            <td><a href="https://huggingface.co/timm/eva_giant_patch14_clip_224.laion400m_s11b_b41k">Huggingface</a></td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/ICCV2023/html/Zhai_Sigmoid_Loss_for_Language_Image_Pre-Training_ICCV_2023_paper.html">SigLIP</a></th>
+                            <td>ViT-B/16</td>
+                            <td>WebLI</td>
+                            <td>32</td>
+                            <td>45</td>
+                            <td>78.48</td>
+                            <td>63.79</td>
+                            <td><a href="https://huggingface.co/timm/ViT-B-16-SigLIP-384">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/CVPR2023/html/Cherti_Reproducible_Scaling_Laws_for_Contrastive_Language-Image_Learning_CVPR_2023_paper">OpenCLIP</a></th>
+                            <td>ViT-g/14</td>
+                            <td>LAION-2B</td>
+                            <td>86.7</td>
+                            <td>34.5</td>
+                            <td>78.48</td>
+                            <td>64.26</td>
+                            <td><a href="https://huggingface.co/laion/CLIP-ViT-g-14-laion2B-s34B-b88K">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/CVPR2023/html/Cherti_Reproducible_Scaling_Laws_for_Contrastive_Language-Image_Learning_CVPR_2023_paper">OpenCLIP</a></th>
+                            <td>ViT-H/14</td>
+                            <td>LAION-2B</td>
+                            <td>77.25</td>
+                            <td>34</td>
+                            <td>77.92</td>
+                            <td>64.02</td>
+                            <td><a href="https://huggingface.co/laion/CLIP-ViT-H-14-laion2B-s32B-b79K">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/CVPR2024/html/Vasu_MobileCLIP_Fast_Image-Text_Models_through_Multi-Modal_Reinforced_Training_CVPR_2024_paper.html">MobileCLIP</a></th>
+                            <td>ViT-B/16</td>
+                            <td>DatacompDR</td>
+                            <td>64</td>
+                            <td>13</td>
+                            <td>77.18</td>
+                            <td>65.22</td>
+                            <td><a href="https://huggingface.co/apple/MobileCLIP-B-LT-OpenCLIP">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/CVPR2023/html/Cherti_Reproducible_Scaling_Laws_for_Contrastive_Language-Image_Learning_CVPR_2023_paper">OpenCLIP</a></th>
+                            <td>ViT-H/14</td>
+                            <td>LAION-5B</td>
+                            <td>90</td>
+                            <td>13</td>
+                            <td>76.97</td>
+                            <td>65.15</td>
+                            <td><a href="https://huggingface.co/laion/CLIP-ViT-H-14-frozen-xlm-roberta-large-laion5B-s13B-b90k">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/CVPR2023/html/Cherti_Reproducible_Scaling_Laws_for_Contrastive_Language-Image_Learning_CVPR_2023_paper">OpenCLIP</a></th>
+                            <td>ConvNeXt-L</td>
+                            <td>LAION-2B</td>
+                            <td>131</td>
+                            <td>29</td>
+                            <td>76.83</td>
+                            <td>63.87</td>
+                            <td><a href="https://huggingface.co/laion/CLIP-convnext_large_d.laion2B-s26B-b102K-augreg">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/CVPR2024/html/Vasu_MobileCLIP_Fast_Image-Text_Models_through_Multi-Modal_Reinforced_Training_CVPR_2024_paper.html">MobileCLIP</a></th>
+                            <td>ViT-B/16</td>
+                            <td>DatacompDR</td>
+                            <td>64</td>
+                            <td>13</td>
+                            <td>76.83</td>
+                            <td>65.03</td>
+                            <td><a href="https://huggingface.co/apple/MobileCLIP-B-OpenCLIP">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/CVPR2023/html/Cherti_Reproducible_Scaling_Laws_for_Contrastive_Language-Image_Learning_CVPR_2023_paper">OpenCLIP</a></th>
+                            <td>ViT-g/14</td>
+                            <td>LAION-2B</td>
+                            <td>42</td>
+                            <td>13</td>
+                            <td>76.66</td>
+                            <td>62.87</td>
+                            <td><a href="https://huggingface.co/laion/CLIP-ViT-g-14-laion2B-s12B-b42K">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/CVPR2023/html/Cherti_Reproducible_Scaling_Laws_for_Contrastive_Language-Image_Learning_CVPR_2023_paper">OpenCLIP</a></th>
+                            <td>ConvNeXt-L</td>
+                            <td>LAION-2B</td>
+                            <td>131</td>
+                            <td>29</td>
+                            <td>76.60</td>
+                            <td>63.45</td>
+                            <td><a href="https://huggingface.co/laion/CLIP-convnext_large_d.laion2B-s26B-b102K-augreg">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://proceedings.mlr.press/v139/radford21a">OpenAI CLIP</a></th>
+                            <td>ViT-L/14</td>
+                            <td>WIT</td>
+                            <td>32</td>
+                            <td>13.2</td>
+                            <td>76.56</td>
+                            <td>62.76</td>
+                            <td><a href="https://openaipublic.azureedge.net/clip/models/3035c92b350959924f9f00213499208652fc7ea050643e8b385c2dac08641f02/ViT-L-14-336px.pt">OpenAI</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/ICCV2023/html/Zhai_Sigmoid_Loss_for_Language_Image_Pre-Training_ICCV_2023_paper.html">SigLIP</a></th>
+                            <td>ViT-B/16</td>
+                            <td>WebLI</td>
+                            <td>32</td>
+                            <td>40</td>
+                            <td>76.53</td>
+                            <td>62.26</td>
+                            <td><a href="https://huggingface.co/timm/ViT-B-16-SigLIP-256">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openreview.net/forum?id=dVaWCDMBof">DataComp</a></th>
+                            <td>ViT-L/14</td>
+                            <td>CommonPool</td>
+                            <td>90</td>
+                            <td>13</td>
+                            <td>76.39</td>
+                            <td>64.80</td>
+                            <td><a href="https://huggingface.co/laion/CLIP-ViT-L-14-CommonPool.XL.clip-s13B-b90K">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openreview.net/pdf?id=ZKtZ7KQ6G5">DFN</a></th>
+                            <td>ViT-B/16</td>
+                            <td>DFN-2B</td>
+                            <td>-</td>
+                            <td>12.8</td>
+                            <td>76.23</td>
+                            <td>60.75</td>
+                            <td><a href="https://huggingface.co/apple/DFN2B-CLIP-ViT-B-16">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openreview.net/forum?id=5BCFlnfE1g">MetaCLIP</a></th>
+                            <td>ViT-L/14</td>
+                            <td>MetaCLIP-400M</td>
+                            <td>32</td>
+                            <td>12.8</td>
+                            <td>76.17</td>
+                            <td>62.55</td>
+                            <td><a href="https://dl.fbaipublicfiles.com/MMPT/metaclip/l14_400m.pt">Meta</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/ICCV2023/html/Zhai_Sigmoid_Loss_for_Language_Image_Pre-Training_ICCV_2023_paper.html">SigLIP</a></th>
+                            <td>ViT-B/16</td>
+                            <td>WebLI</td>
+                            <td>32</td>
+                            <td>40</td>
+                            <td>76.04</td>
+                            <td>62.33</td>
+                            <td><a href="https://huggingface.co/timm/ViT-B-16-SigLIP">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/CVPR2023/html/Cherti_Reproducible_Scaling_Laws_for_Contrastive_Language-Image_Learning_CVPR_2023_paper">OpenCLIP</a></th>
+                            <td>ConvNeXt-L</td>
+                            <td>LAION-2B</td>
+                            <td>102</td>
+                            <td>26</td>
+                            <td>75.92</td>
+                            <td>62.95</td>
+                            <td><a href="https://huggingface.co/laion/CLIP-convnext_large_d.laion2B-s26B-b102K-augreg">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openreview.net/forum?id=Ee277P3AYC">CoCa (OpenCLIP)</a></th>
+                            <td>ViT-L/14</td>
+                            <td>LAION-2B</td>
+                            <td>90</td>
+                            <td>13</td>
+                            <td>75.64</td>
+                            <td>62.88</td>
+                            <td><a href="https://huggingface.co/laion/CoCa-ViT-L-14-laion2B-s13B-b90k">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://proceedings.mlr.press/v139/radford21a">OpenAI CLIP</a></th>
+                            <td>ViT-B/16</td>
+                            <td>WIT</td>
+                            <td>32</td>
+                            <td>12.8</td>
+                            <td>75.56</td>
+                            <td>61.62</td>
+                            <td><a href="https://openaipublic.azureedge.net/clip/models/b8cca3fd41ae0c99ba7e8951adf17d267cdb84cd88be6f7c2e0eca1737a03836/ViT-L-14.pt">OpenAI</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openreview.net/forum?id=dVaWCDMBof">DataComp</a></th>
+                            <td>ViT-B/16</td>
+                            <td>CommonPool (LAION-2B filtering)</td>
+                            <td>90</td>
+                            <td>13</td>
+                            <td>75.49</td>
+                            <td>63.56</td>
+                            <td><a href="https://huggingface.co/laion/CLIP-ViT-L-14-CommonPool.XL.laion-s13B-b90K">Huggingface</a></td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/CVPR2023/html/Cherti_Reproducible_Scaling_Laws_for_Contrastive_Language-Image_Learning_CVPR_2023_paper">OpenCLIP</a></th>
+                            <td>ViT-B/16</td>
+                            <td>LAION-2B</td>
+                            <td>82</td>
+                            <td>32</td>
+                            <td>75.23</td>
+                            <td>61.89</td>
+                            <td><a href="https://huggingface.co/laion/CLIP-ViT-L-14-laion2B-s32B-b82K">Huggingface</a> </td>
+                        </tr>
+                        <tr>
+                            <th><a href="https://openaccess.thecvf.com/content/ICCV2023/html/Zhai_Sigmoid_Loss_for_Language_Image_Pre-Training_ICCV_2023_paper.html">SigLIP</a></th>
+                            <td>ViT-B/16</td>
+                            <td>WebLI</td>
+                            <td>32</td>
+                            <td>40</td>
+                            <td>75.11</td>
+                            <td>60.68</td>
+                            <td><a href="https://huggingface.co/timm/ViT-B-16-SigLIP-i18n-256">Huggingface</a></td>
                         </tr>
                     </tbody>
                 </table>
