@@ -56,13 +56,13 @@
             <!-- Tabs for Constrained and Unconstrained -->
             <center>
                 <div class="mb-4">
-                    <button id="constrainedTab" class="px-4 py-2 bg-blue-500 text-white rounded" onclick="showTable('constrained')">Constrained</button>
-                    <button id="unconstrainedTab" class="px-4 py-2 bg-gray-300 text-black rounded ml-2" onclick="showTable('unconstrained')">Unconstrained</button>
+                    <button id="unconstrainedTab" class="px-4 py-2 bg-blue-500 text-white rounded" onclick="showTable('unconstrained')">Unconstrained</button>
+                    <button id="constrainedTab" class="px-4 py-2 bg-gray-300 text-black rounded ml-2" onclick="showTable('constrained')">Constrained</button>
                 </div>
             </center>
-    
+
             <!-- Constrained Table -->
-            <div id="constrainedTable" class="overflow-x-auto">
+            <div id="constrainedTable" class="overflow-x-auto hidden">
                 <center>
                     <div class="mb-4">
                         <button id="smallTab" class="px-4 py-2 bg-blue-500 text-white rounded ml-2" onclick="showSubTable('small')">Small</button>
@@ -125,9 +125,9 @@
                     </table>
                 </div>
             </div>
-    
+
             <!-- Unconstrained Table -->
-            <div id="unconstrainedTable" class="overflow-x-auto hidden">
+            <div id="unconstrainedTable" class="overflow-x-auto">
                 <table id="unconstrainedLeaderboardTable" class="display w-full text-left text-black">
                     <thead>
                         <tr>
@@ -734,7 +734,7 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>            
+            </div>
     </div>
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
