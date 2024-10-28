@@ -743,6 +743,12 @@
     
     <script>
         $(document).ready(function() {
+            // Initialize DataTables with custom settings for unconstrainedLeaderboardTable
+            $('#unconstrainedLeaderboardTable').DataTable({
+                "pageLength": -1,  // Display all rows on a single page
+                "order": [[5, "desc"]]  // Sort by ImageNet-1K Top 1 accuracy in descending order
+            });
+            
             // Initialize DataTables for all tables
             $('#constrainedLeaderboardTable').DataTable();
             $('#unconstrainedLeaderboardTable').DataTable();
